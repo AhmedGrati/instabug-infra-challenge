@@ -1,0 +1,13 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name:  violin-service
+spec:
+  selector:
+    name:  violin-app
+  type:  NodePort
+  ports:
+  - name: violin-app-port
+    nodePort: 30010
+    port:  80
+    targetPort:  8080
